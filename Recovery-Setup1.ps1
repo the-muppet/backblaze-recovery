@@ -29,6 +29,7 @@ else {
 }
 
 Write-Host "This procedure WILL FORCE a system restart, please save your progress and close any open programs to prevent data loss." -ForegroundColor Red
+Start-Sleep -Seconds 2
 Write-Host "Press 'C' to continue, or 'Q' to quit"
 
 $key = $null
@@ -41,43 +42,6 @@ if ($key.Character -eq 'q') {
     Exit 1
 }
 
-Write-Host "Beep boop beep." -ForegroundColor Cyan
-Start-Sleep -Seconds 3
-Write-Host "Initializing Recovery Setup..." -ForegroundColor Cyan
-Start-Sleep -Seconds 2
-Write-Host "Script loaded successfully." -ForegroundColor Green
-Start-Sleep -Seconds 2
-Write-Host "Beginning operations..." -ForegroundColor Cyan
-Start-Sleep -Seconds 3
-Write-Host "..." -ForegroundColor DarkGray
-Start-Sleep -Seconds 2
-Write-Host ".." -ForegroundColor DarkGray
-Write-Host "FEAR ME PUNY MORTAL!!" -ForegroundColor Red
-Start-Sleep -Seconds 2
-Write-Host "...whoops.. wrong script." -ForegroundColor DarkGray
-Start-Sleep -Seconds 3
-Write-Host "Script definitely loaded successfully..." -ForegroundColor Cyan
-Start-Sleep -Seconds 3
-Write-Host "Ahem." -ForegroundColor Yellow
-Start-Sleep -Seconds 1
-Write-Host "Hello, human! We now begin your data recovery quest!!" -ForegroundColor Yellow
-Start-Sleep -Seconds 4
-Write-Host "Be not afraid, for Elmo is here to..." -ForegroundColor Yellow
-Start-Sleep -Seconds 3
-Write-Host "..well, Elmo is here." -ForegroundColor Yellow
-Start-Sleep -Seconds 3
-Write-Host "Nevermind that!" -ForegroundColor Red
-Start-Sleep -Seconds 2
-Write-Host "What are yo.. what are you doing?!" -ForegroundColor Yellow
-Start-Sleep -Seconds 3
-Write-Host "We've narry a moment for dillying, let alone dallying!" -ForegroundColor Yellow
-Start-Sleep -Seconds 2
-Write-Host "Tally-ho!!" -ForegroundColor Yellow
-Start-Sleep -Seconds 2
-Write-Host "Oh We both know you've seen weirder shit" -ForegroundColor Magenta
-Start-Sleep -Seconds 4
-Write-Host "--------------------------------------------------" -ForegroundColor White
-Start-Sleep -Seconds 1
 Write-Host "Starting WSL2 and Docker Desktop setup (Part 1)..." -ForegroundColor Green
 
 # Check for administrative privileges
