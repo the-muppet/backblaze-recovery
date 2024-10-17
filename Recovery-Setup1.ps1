@@ -1,7 +1,7 @@
 # Part 1: part1.ps1
 
 # Check and update PowerShell
-$PowerShellSetupScript = Join-Path $PSScriptRoot "update_powershell.ps1"
+$PowerShellSetupScript = Join-Path $PSScriptRoot "Update-Powershell.ps1"
 if (Test-Path $PowerShellSetupScript) {
     Write-Host "Checking PowerShell installation..." -ForegroundColor Cyan
     & $PowerShellSetupScript
@@ -14,7 +14,19 @@ else {
     Write-Host "PowerShell setup script not found. Continuing with existing PowerShell version." -ForegroundColor Yellow
 }
 
-# Welcome message
+Write-Host "This procedure WILL FORCE a system restart, please save your progress and close any open programs to prevent data loss." -ForegroundColor Red
+Write-Host "Press 'C' to continue, or 'Q' to quit"
+
+$key = $null
+
+while ($key.Character -ne 'c' -and $key.Character -ne 'q') {
+    $key = $host.UI.RawUI.ReadKey("NoEcho, IncludeKeyDown")
+}
+
+if ($key.Character -eq 'q') {
+    Exit 1
+}
+
 Write-Host "Beep boop beep." -ForegroundColor Cyan
 Start-Sleep -Seconds 3
 Write-Host "Initializing Recovery Setup..." -ForegroundColor Cyan
