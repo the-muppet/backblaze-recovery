@@ -1,5 +1,5 @@
 # Part 2: part2.ps1
-2 
+
 # Error handling
 $errorOccurred = $false
 

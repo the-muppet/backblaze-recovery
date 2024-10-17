@@ -25,19 +25,16 @@ This project provides a set of scripts to streamline the process of restoring da
 
 ## Installation and Usage
 
-1. Clone this repository or download the scripts to your local machine.
+1. Clone this repository or download and unzip the package on your local machine.
 
-2. Navigate into the project directory or unzipped folder and Open PowerShell as an administrator and run:
-`.\Update-Powershell.ps1`
-This script will install or update PowerShell 7+ if necessary.
-(Alternatively, you can right click on the file and choose Run as Administrator)
+2. Navigate into the `backblaze-recovery` directory and start the recovery-process either by running:
+  - `./Recovery-Setup1.ps1` in your console, or by right-clicking the script and selecting the `Run with Powershell` option.
 
-3. Run the initial setup script:
-`.\Recovery-Setup1.ps1`
 This will set up WSL2 and Docker Desktop. Your system will restart after this step.
 
-4. After the system restarts, the second part of the setup will run automatically - but in case it doesn't:
-`.\Recovery-Setup2.ps1`
+4. After the system restarts, the second part of the setup should run automatically, but in case it doesn't:
+  - `.\Recovery-Setup2.ps1`
+  
 This script will complete the Docker Desktop installation and prepare for data restoration.
 
 5. During setup, you'll be prompted to enter your Backblaze B2 credentials and choose between full bucket sync or single file retrieval.
