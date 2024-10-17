@@ -1,8 +1,8 @@
-# I need my shit Back(Blaze)!
+# backblaze-recovery
 
 ## Overview
 
-This project provides a set of scripts to streamline the process of restoring data from Backblaze B2 cloud storage. With different run options allowing for full-bucket sync or targeted single file retrieval.
+This project provides a set of scripts to streamline the process of restoring data from Backblaze B2 cloud storage with different run options allowing for full-bucket sync or targeted single file retrieval.
 
 ## Components
 
@@ -43,8 +43,6 @@ This script will complete the Docker Desktop installation and prepare for data r
 
 ## Restoration Options
 
-As we're running this operation through a virtual Linux distribution and using volume mounting for persistence, I believe this will allow us to get around your filename length issue.
-
 ### Full Bucket Sync:
 This option downloads all files from your specified Backblaze B2 bucket to your local machine. 
 - give the answer `full` during setup when prompted for this option.
@@ -64,10 +62,6 @@ This option allows you to download a specific file from your Backblaze B2 bucket
 
 This tool handles sensitive information like your Backblaze B2 credentials. Always run these scripts in a secure environment and never share your credentials.
 
-## The Fine Print (aka Disclaimer)
-
-This tool is provided as-is, no warranties, no guarantees, no "get out of jail free" cards. Always keep backups of your backups (backupception?). Any users of this tool agree to not hold the author liable for any damages and will not hold author responsible for any data mishaps, computer rebellions, or if using this tool somehow turns you into a JavaScript developer. (which would be extra super weird, i know)
-
 ## License
 
 This project is MIT licensed! 🎉
@@ -77,7 +71,7 @@ What does that mean? Well, in simple terms:
 - Feel free to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of this software.
 - Just make sure to include the original copyright notice and this permission notice in all copies or substantial portions of the software.
 
-For the fun of it, here's the full MIT license text (because lawyers need something to read too):
+Here's the full MIT license text (because lawyers need something to read too):
 
 ```
 MIT License
