@@ -93,10 +93,12 @@ wsl --set-default-version 2
 
 # Create a scheduled task to run Part 2 after reboot
 Write-Host "Creating scheduled task for Part 2..." -ForegroundColor Cyan
-$taskAction = New-ScheduledTaskAction -Execute "$PSScriptRoot\Recovery-Setup2.ps1"
-$taskTrigger = New-ScheduledTaskTrigger -AtLogOn
-$taskPrincipal = New-ScheduledTaskPrincipal -UserId $env:USERNAME -RunLevel Highest
-Register-ScheduledTask -TaskName "BackblazeSetupPart2" -Action $taskAction -Trigger $taskTrigger -Principal $taskPrincipal -Force
+$taskAction = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-ExecutionPolicy Bypass -File `"$PSScriptRoot\Recovery-Setup2.ps1`""
+$taskTrigger = New-ScheduledTaskTrigger -AtLogOn -RandomDelay (New-TimeSpan -Seconds 30)
+$taskPrincipal = New-ScheduledTaskPrincipal -UserId "SYSTEM" -RunLevel Highest
+$taskSettings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -StartWhenAvailable
+
+Register-ScheduledTask -TaskName "BackblazeSetupPart2" -Action $taskAction -Trigger $taskTrigger -Principal $taskPrincipal -Settings $taskSettings -Force
 
 Write-Host "Part 1 complete. The system will now restart." -ForegroundColor Green
 Write-Host "After reboot, operations will continue - ready your credentials." -ForegroundColor Green
