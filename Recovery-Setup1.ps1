@@ -1,4 +1,18 @@
 # Part 1: part1.ps1
+# Check if the script is running in PowerShell
+
+if ($Host.Name -ne 'ConsoleHost') {
+    Write-Host "This script must be run in PowerShell." -ForegroundColor Red
+    Write-Host "Launching PowerShell..." -ForegroundColor Green
+    
+    # Get the full path of the current script
+    $scriptPath = $MyInvocation.MyCommand.Path
+    
+    # Launch PowerShell and execute the script
+    Start-Process powershell.exe -ArgumentList "-ExecutionPolicy Bypass -File `"$scriptPath`"" -Verb RunAs
+    
+    Exit
+}
 
 # Check and update PowerShell
 $PowerShellSetupScript = Join-Path $PSScriptRoot "Update-Powershell.ps1"
