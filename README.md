@@ -1,4 +1,4 @@
-# backblaze-recovery
+# Backblaze-Recovery
 
 ## Overview
 
