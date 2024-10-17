@@ -1,0 +1,13 @@
+services:
+  
+  backblaze-restore:
+    build:
+      context: .
+      dockerfile: dockerfile
+    volumes:
+      - ${RESTORE_DIR:-./backblaze_restore}:/mnt/restore_dir
+      - ./restore.py:/restore.py
+    environment:
+      - APPLICATION_KEY_ID=${APPLICATION_KEY_ID}
+      - APPLICATION_KEY=${APPLICATION_KEY}
+    command: ${RESTORE_TYPE} ${BUCKET_NAME} ${FILE_ID:-} ${FILE_NAME:-} /mnt/restore_dir
