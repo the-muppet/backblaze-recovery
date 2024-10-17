@@ -5,7 +5,7 @@ $MinimumVersion = [Version]"7.0.0"
 function Install-PowerShell {
     Write-Host "Installing PowerShell..." -ForegroundColor Cyan
     try {
-        iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
+        Invoke-Expression "& { $(Invoke-RestMethod https://aka.ms/install-powershell.ps1) } -UseMSI"
     }
     catch {
         Write-Host "Error installing PowerShell: $_" -ForegroundColor Red
@@ -16,7 +16,7 @@ function Install-PowerShell {
 function Update-PowerShell {
     Write-Host "Updating PowerShell..." -ForegroundColor Cyan
     try {
-        iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
+        Invoke-Expression "& { $(Invoke-RestMethod https://aka.ms/install-powershell.ps1) } -UseMSI"
     }
     catch {
         Write-Host "Error updating PowerShell: $_" -ForegroundColor Red
